@@ -1,15 +1,31 @@
 var myStorage = window.localStorage;
 var ethprice = 2113.35
-var ethbalanceeth = 2
-var dollarbalance = 500
-var miners = 0;
-var minerprice = 500;
-var coolingprice = 1000;
-var totalmined = 0;
+var ethbalanceeth = localStorage.getItem('ethbalanceeth') ? Number(localStorage.getItem('ethbalanceeth')) : 2;
+var dollarbalance = localStorage.getItem('dollarbalance') ? Number(localStorage.getItem('dollarbalance')) : 500;
+var miners = localStorage.getItem('miners') ? Number(localStorage.getItem('miners')) : 0;
+var minerprice = localStorage.getItem('minerprice') ? Number(localStorage.getItem('minerprice')) : 500;
+var coolingprice = localStorage.getItem('coolingprice') ? Number(localStorage.getItem('coolingprice')) : 1000;
+var totalmined = localStorage.getItem('totalmined') ? Number(localStorage.getItem('totalmined')) : 0;
 var error = "";
 var count = 5;
-var miningpower = 0.01
-var miningpowerprice = 2000
+var miningpower = localStorage.getItem('miningpower') ? Number(localStorage.getItem('miningpower')) : 0.01;
+var miningpowerprice = localStorage.getItem('miningpowerprice') ? Number(localStorage.getItem('miningpowerprice')) : 2000;
+
+window.onbeforeunload = function() {
+    localStorage.setItem('miners',miners);
+    localStorage.setItem('minerprice',minerprice);
+    localStorage.setItem('ethbalanceeth',ethbalanceeth);
+    localStorage.setItem('dollarbalance',dollarbalance);
+    localStorage.setItem('miningpower',miningpower);
+    localStorage.setItem('miningpowerprice',miningpowerprice);
+    localStorage.setItem('totalmined',totalmined);
+    localStorage.setItem('coolingprice',coolingprice);
+}
+
+function restart(){
+  localStorage.clear()
+  window.location.reload();
+}
 
 var cats = [2120,2111,2115,2133,2145,2123.35,2113.35]
 

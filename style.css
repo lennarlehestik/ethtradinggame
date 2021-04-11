@@ -9,6 +9,25 @@
   margin-bottom:5px;
 }
 
+#restart{
+  position:absolute;
+  left:10px;
+  top:10px;
+  width:100px;
+  height:40px;
+  background-color:#2d3436;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  transition: all .2s ease-in-out;
+}
+
+#restart:hover{
+  transform:scale(1.1,1.1)
+}
+
 #powermine{
   margin-left:5px;
   margin-right:5px;
